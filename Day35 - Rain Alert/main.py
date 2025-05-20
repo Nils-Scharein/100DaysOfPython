@@ -28,13 +28,10 @@ response = requests.get(OWM_Endpoint, params=weather_params)
 # Open the file in write mode and dump the JSON data into it
 with open("data.json", "w") as data_file:
     json.dump(response.json(), data_file, indent=4)
-
-# Optionally print the JSON response
 print(response.json())
 
-# Parse the JSON data into a dictionary
-weather_data = response.json()
 
+weather_data = response.json()
 will_rain = False
 
 # Now you can safely iterate over the list in the response
